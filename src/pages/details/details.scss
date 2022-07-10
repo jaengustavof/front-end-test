@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+
+.details-view {
+    width: 100%;
+    padding: 20px;
+    background-color: tomato;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    &_container {
+        padding: 20px;
+        width: 100%;
+        max-width: 1200px;
+        background-color: red;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 20px;
+
+        .product-image, .product-description {
+            height: 100%;
+            width: 50%;
+            padding: 20px;
+            background-color: aquamarine;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+ 
+    }
+}

@@ -1,0 +1,15 @@
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 50px; 
+    box-shadow: 0 4px 5px -2px gray;
+    .logo-bread-continer {
+        width: 50%;
+        .logo-image {
+            height: 100px;
+        }
+    }
+
+}

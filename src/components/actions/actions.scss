@@ -1,0 +1,25 @@
+.actions-container {
+    width: 100%;
+    background-color: burlywood;
+    margin-top: 10px;
+    form {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .add-to-cart{
+        width: 150px;
+        height: 50px;
+        background-color: green;
+        box-shadow: 4px 4px 7px rgba(0,0,0,0.2);
+        color: white;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-weight: bold;
+    }
+}

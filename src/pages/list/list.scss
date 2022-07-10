@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+}
+
+.list-view {
+
+    width: 100%;
+    padding: 20px;
+    background-color: tomato;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    &_search{  
+        width: 100%;
+        max-width: 1200px;
+        padding: 20px;
+        background-color: darkgoldenrod;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &_container {
+        padding: 20px;
+        width: 100%;
+        max-width: 1200px;
+        background-color: red;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+}

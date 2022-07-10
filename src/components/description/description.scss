@@ -1,0 +1,19 @@
+.description-container {
+    width: 100%;
+    background-color: lightblue;
+    .description-info {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        .info_item {
+            width: 50%;
+        }
+    }
+
+    .description-price {
+        text-align: right;
+        font-size: 28px;
+    }
+}
