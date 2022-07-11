@@ -10,7 +10,7 @@ import "./app.scss";
 
 
 function App() {
-  const {items, setItems} = GetItems([]);
+  const {items, setItems} = GetItems();
   const [filter, setFilter] = useState("");
 
   return (
