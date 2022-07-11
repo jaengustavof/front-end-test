@@ -1,9 +1,9 @@
 import axios from "axios";
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import FetchContext from "../context/fetchContext";
 
 const GetItems = () => {
-    const { items, setItems } = useContext(FetchContext);
+    const [items, setItems ]  = useState([]);
 
     const getAll= async () => {
         const result = await axios.get(
@@ -12,8 +12,8 @@ const GetItems = () => {
         const allItems = result.data;
 
         setItems(allItems)
-      
       };
+      
       useEffect(() => {
         getAll();
 
@@ -21,6 +21,7 @@ const GetItems = () => {
             getAll();
         }, 3600000);
       }, []);
+
       return {items, setItems };
 
 }

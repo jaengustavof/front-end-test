@@ -4,16 +4,17 @@ import Header from './components/header/Header';
 import List from './pages/list/List';
 import Details from './pages/details/Details';
 import FetchContext from "./context/fetchContext";
-import axios from "axios";
+import GetItems from "./hooks/GetItems";
 
 import "./app.scss";
 
 
 function App() {
-  const [items, setItems] = useState();
-  
+  const {items, setItems} = GetItems([]);
+  const [filter, setFilter] = useState("");
+
   return (
-    <FetchContext.Provider value={{items, setItems}}>
+    <FetchContext.Provider value={{items, setItems, filter, setFilter}}>
       <div className="App">
         <BrowserRouter>
           <Header/>
