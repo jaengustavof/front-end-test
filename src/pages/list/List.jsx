@@ -12,12 +12,12 @@ const List = () => {
     const { items, setItems, filter, setFilter} = useContext(FetchContext);
     const [filteredStock, setFilteredStock] = useState(items)
     
-    let result = items
     useEffect(() => {
-        setFilteredStock(result)
+        setFilteredStock(items)
     },[items])
 
     useEffect(() => {
+      let result
       if(!filter) {
         result = items
       }else {

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import FetchContext from "../context/fetchContext";
+
 
 const GetItems = () => {
     const [items, setItems ]  = useState([]);

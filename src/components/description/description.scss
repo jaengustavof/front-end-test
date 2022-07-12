@@ -1,14 +1,22 @@
 .description-container {
     width: 100%;
     background-color: lightblue;
+    .product-brand {
+        text-transform: uppercase;
+    }
+    .product-model {
+        margin: 20px;
+    }
     .description-info {
         width: 100%;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: flex-start;
+
         .info_item {
-            width: 50%;
+            width: 100%;
+            margin: 5px;
         }
     }
 
