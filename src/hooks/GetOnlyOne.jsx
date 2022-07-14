@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 const GetOnlyOne = (id) => {
     const [product, setProduct ]  = useState([]);
 
-    const getOne= async () => {
+    try {
+      const getOne= async () => {
 
         const result = await axios.get(
           `https://front-test-api.herokuapp.com/api/product/${id}`
@@ -17,6 +18,12 @@ const GetOnlyOne = (id) => {
       useEffect(() => {
         getOne();
       }, []);
+
+    } catch (error) {
+      console.log(error);
+      console.log(error.message);
+    }
+
 
       return {product, setProduct };
 

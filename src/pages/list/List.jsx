@@ -9,23 +9,25 @@ import FetchContext from "../../context/fetchContext";
 const List = () => {
    
     
-    const { items, setItems, filter, setFilter} = useContext(FetchContext);
+    const { items, setItems, filters, setFilters} = useContext(FetchContext);
     const [filteredStock, setFilteredStock] = useState(items)
+
+
     
     useEffect(() => {
         setFilteredStock(items)
-    },[items])
+    },[items]);
 
     useEffect(() => {
-      let result
-      if(!filter) {
+        let result
+      if(!filters) {
         result = items
       }else {
-        result = result.filter(e=> e.brand.includes(filter) || e.model.includes(filter))
+        result = items.filter(e=> e.brand.toLowerCase().includes(filters.toLowerCase()) || e.model.toLowerCase().includes(filters.toLowerCase()))
       }
       setFilteredStock(result)
-    }, [filter])
-    
+    },[filters])
+   
 
     return (
         <div className="list-view">
@@ -41,6 +43,7 @@ const List = () => {
                         image: e.imgUrl
                     }
                     return(
+                        
                         <Item info={info}/>
                     )
                 })

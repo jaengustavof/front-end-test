@@ -11,10 +11,11 @@ import "./app.scss";
 
 function App() {
   const {items, setItems} = GetItems();
-  const [filter, setFilter] = useState("");
+  const [filters, setFilters] = useState("");
+  const [cartProducts, setCartProducts] = useState([])
 
   return (
-    <FetchContext.Provider value={{items, setItems, filter, setFilter}}>
+    <FetchContext.Provider value={{items, setItems, filters, setFilters, cartProducts, setCartProducts}}>
       <div className="App">
         <BrowserRouter>
           <Header/>

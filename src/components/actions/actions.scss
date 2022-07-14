@@ -1,12 +1,30 @@
 .actions-container {
     width: 100%;
     background-color: burlywood;
+    height: 90px;
     margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     form {
+        width: 100%;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
         padding: 10px;
+        input{
+            background-color: green;
+            color: white;
+            width: 220px;
+            height: 50px;
+            cursor: pointer;
+            transform: 0.5s;
+            &:hover {
+                background-color: white;
+                color: green;
+                transition: 0.5s;
+            }
+        }
     }
 
     .add-to-cart{

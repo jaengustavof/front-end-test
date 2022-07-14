@@ -1,10 +1,12 @@
-
 import Badge from '@mui/material/Badge';
 import { styled } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Link} from "react-router-dom";
 import Breadcrumbs from '../breadcrumbs/Breadcrumbs';
+import FetchContext from "../../context/fetchContext";
+import { useContext, useEffect } from "react";
+
 import "./header.scss"
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -16,7 +18,27 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
     },
   }));
 
+
 const Header = () => {
+    const { cartProducts, setCartProducts} = useContext(FetchContext);
+
+    useEffect(()=>{
+        const saved = localStorage.getItem("cartProducts");
+        const initialValue = JSON.parse(saved);
+        if(initialValue){
+            setCartProducts(initialValue)
+        }
+        
+        setInterval(() => {
+            if(initialValue){
+                setCartProducts(initialValue)
+            }
+        }, 3600000);
+
+    },[])
+    console.log("aqui",cartProducts)
+
+
     return(
 
     <header>
@@ -28,7 +50,7 @@ const Header = () => {
         </div>
 
         <IconButton aria-label="cart">
-            <StyledBadge badgeContent={4} color="warning">
+            <StyledBadge badgeContent={cartProducts.length} color="warning">
                 <ShoppingCartIcon />
             </StyledBadge>
         </IconButton>
