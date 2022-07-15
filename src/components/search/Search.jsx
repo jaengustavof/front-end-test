@@ -2,7 +2,6 @@ import FetchContext from "../../context/fetchContext";
 import { useContext } from "react";
 
 
-
 const Search = () => {
 
     const { filters, setFilters} = useContext(FetchContext);
@@ -10,12 +9,8 @@ const Search = () => {
         
         const filterParams = e.target.value;
         setFilters(filterParams)
- 
-  
     }
-    
-
-    
+  
     return(
         <input type="text" className="header-input" onChange={handleChange} />
     )

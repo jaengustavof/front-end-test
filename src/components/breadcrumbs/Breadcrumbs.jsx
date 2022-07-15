@@ -7,12 +7,11 @@ import FetchContext from "../../context/fetchContext";
 const Breadcrumbs = () => {
     const { items, setItems, urlParams, setUrlParams, breadcrumb, setBradcrum} = useContext(FetchContext);
     
-
     useEffect(()=>{
         let result = items.filter(e => e.id === urlParams)
         setBradcrum(result[0])
     },[urlParams])
-    console.log(breadcrumb)
+
     if(breadcrumb){
         return (
         

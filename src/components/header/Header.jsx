@@ -31,6 +31,8 @@ const Header = () => {
 
         setInterval(() => {
             if(initialValue){
+                const saved = localStorage.getItem("cartProducts");
+                const initialValue = JSON.parse(saved);
                 setCartProducts(initialValue)
             }
         }, 3600000);
