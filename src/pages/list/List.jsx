@@ -8,12 +8,9 @@ import FetchContext from "../../context/fetchContext";
 
 const List = () => {
    
-    
-    const { items, setItems, filters, setFilters} = useContext(FetchContext);
+    const { items, setItems, filters, setFilters, setBradcrum} = useContext(FetchContext);
     const [filteredStock, setFilteredStock] = useState(items)
-
-
-    
+    setBradcrum("")
     useEffect(() => {
         setFilteredStock(items)
     },[items]);
@@ -44,7 +41,7 @@ const List = () => {
                     }
                     return(
                         
-                        <Item info={info}/>
+                        <Item info={info} key={info.id}/>
                     )
                 })
                 

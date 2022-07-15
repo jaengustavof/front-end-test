@@ -13,12 +13,14 @@ function App() {
   const {items, setItems} = GetItems();
   const [filters, setFilters] = useState("");
   const [cartProducts, setCartProducts] = useState([])
+  const [urlParams, setUrlParams] = useState("")
+  const [breadcrumb, setBradcrum] = useState("")
 
   return (
-    <FetchContext.Provider value={{items, setItems, filters, setFilters, cartProducts, setCartProducts}}>
+    <FetchContext.Provider value={{items, setItems, filters, setFilters, cartProducts, setCartProducts, urlParams, setUrlParams, breadcrumb, setBradcrum}}>
       <div className="App">
         <BrowserRouter>
-          <Header/>
+        <Header/>
           <Routes>
             <Route path="/" element = {<List/>}/>
             <Route path="/:id" element = {<Details/>}/>

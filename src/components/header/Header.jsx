@@ -28,7 +28,7 @@ const Header = () => {
         if(initialValue){
             setCartProducts(initialValue)
         }
-        
+
         setInterval(() => {
             if(initialValue){
                 setCartProducts(initialValue)
@@ -36,7 +36,7 @@ const Header = () => {
         }, 3600000);
 
     },[])
-    console.log("aqui",cartProducts)
+
 
 
     return(

@@ -4,10 +4,14 @@ import Description from "../../components/description/Description";
 import Actions from "../../components/actions/Actions";
 import {useParams} from "react-router-dom";
 import GetOnlyOne from "../../hooks/GetOnlyOne";
-
+import FetchContext from "../../context/fetchContext";
+import { useState, useContext } from "react";
 
 const Details = () => {
     const { id } = useParams();
+    const { urlParams, setUrlParams} = useContext(FetchContext);
+    setUrlParams(id)
+    
 
     const { product, setProduct} = GetOnlyOne(id)
     const { options } = product
